@@ -1,0 +1,678 @@
+@media screen and (max-width: 700px) {
+    * {
+        box-sizing: border-box;
+        }
+
+    .preload * {
+    transition: none !important;
+    }
+
+        body {
+            margin: 0;
+        font-family: "Helvetica Neue", Helvetica, arial, sans-serif; 
+        background: url('http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/wild_oliva.png') #ededed;
+        line-height: 1.5;
+        }
+
+        
+    h2 {
+        color: #fff;
+        margin-bottom: .5em;
+        font-size: 1.7em;
+        font-weight: bold;
+        text-shadow: 0 1px 0 rgba(0,0,0,1);
+    }
+
+    .slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;  
+        
+    }
+
+    .content {
+        position: absolute;
+        width: 100%;
+        transform: translateX(-100%);
+        top: 0;
+        opacity: 0;
+        padding: 20px;
+        transition: transform .5s ease-out, opacity 1s ease-out;
+    }
+
+    .content p {
+        font-size: .85em;
+        color: #fff;
+    }
+
+    input[type=radio] {
+        display: none;
+    }
+
+    label {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        line-height: 3em;
+        width: 25%;
+        text-align: center;
+        cursor: pointer;
+        font-size: .8em;
+        z-index: 50;
+        color: #fff;
+        text-shadow: 0 1px 0 rgba(0,0,0,.25);
+        font-weight: bold;
+background-color: #2175c7;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#05abe0',GradientType=0 ); /* IE6-9 */
+
+    }
+
+
+    .slide:nth-child(2) label {
+        margin-left: 25%;
+    }
+
+    .slide:nth-child(3) label {
+        margin-left: 50%;
+    }
+
+    .slide:nth-child(4) label {
+        margin-left: 75%;
+    }
+
+    input[type=radio]:checked ~ .content {
+    transform: translateX(0);
+        opacity: 1;
+    }
+
+    input[type=radio]:checked + label {
+        background: #ededed;
+        color: #ccc;
+        text-shadow: none;
+    }
+
+    /* Loading */
+    /*
+PEN BY: @AliRanjbar
+Site: www.aliranjbar.ir
+pen lang: html, css, js(jquery)
+*/
+ @import url('https://fonts.googleapis.com/css?family=Lobster');
+.loading {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #2175c7;
+  z-index: 99;
+}
+.loading:after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: -30px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  border: 6px solid #f2f2f2;
+  border-top: 6px dotted #f2f2f2;
+  border-bottom: 6px dotted #f2f2f2;
+  border-radius: 50%;
+  animation: loading 2s infinite;
+}
+.loading:before {
+  font-family: 'Lobster', cursive;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: white;
+  content: "Loading...";
+  position: absolute;
+  top: 57%;
+  text-align: center;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Search */
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600);
+ * {
+	 box-sizing: border-box;
+}
+ form {
+	 margin: 30px auto 110px;
+}
+ .search_bar {
+	 background: #fff;
+	 position: relative;
+	 font-family: 'Source Sans Pro', sans-serif;
+     max-width: 420px;
+     margin: 0;
+    padding: 5px;
+}
+ .search_bar input[type=text] {
+	 border: none;
+	 box-shadow: none;
+	 font-weight: 600;
+	 font-size: 14px;
+	 width: 80%;
+	 padding: 0.5em;
+	 margin: 0;
+	 overflow: hidden;
+}
+ .search_bar input[type=text]:focus {
+	 outline: none;
+}
+ .search_bar button[type=submit] {
+	 background: linear-gradient(#237cd4, #1e6ab5);
+	 color: rgba(255, 255, 255, 0);
+	 border: 1px solid #1c62a8;
+	 width: 10%;
+	 min-width: 56px;
+	 position: absolute;
+	 top: -1px;
+	 right: -1px;
+	 bottom: -1px;
+	 border-radius: 0 3px 3px 0;
+	 margin: 0;
+	 user-select: none;
+}
+ .search_bar button[type=submit]:after {
+	 content: '';
+	 position: absolute;
+	 top: 18%;
+	 right: 0;
+	 bottom: 22%;
+	 left: 4%;
+	 background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/search-icon.svg") no-repeat center center;
+	 background-size: contain;
+}
+ .search_bar button[type=submit]:hover, .search_bar button[type=submit]:focus {
+	 background: linear-gradient(#38d, #2174c7);
+	 box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+	 cursor: pointer;
+}
+ .search_bar .search_dropdown {
+	 font-weight: 600;
+	 min-width: 17px;
+	 background: linear-gradient(#f4f4f4, #e2e2e2);
+	 border-right: 1px solid #ddd;
+	 color: #555;
+	 padding: 0 28px 0 13px;
+	 border-radius: 2px 0 0 2px;
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 bottom: 0;
+	 z-index: 10000;
+	 user-select: none;
+	 box-sizing: content-box;
+}
+ .search_bar .search_dropdown:after {
+	 content: "\2193";
+	 color: rgba(85, 85, 85, 0);
+	 background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg") no-repeat top left;
+	 height: 8px;
+	 width: 10px;
+	 position: absolute;
+	 top: 50%;
+	 right: 10px;
+	 margin-top: -6px;
+}
+ .search_bar .search_dropdown:hover, .search_bar .search_dropdown.active {
+	 background: linear-gradient(#e7e7e7, #d5d5d5);
+	 cursor: pointer;
+	 border-right-color: #ccc;
+}
+ .search_bar .search_dropdown > span {
+	 position: absolute;
+	 top: 50%;
+	 margin-top: -8px;
+	 white-space: nowrap;
+	 font-size: 15px;
+}
+ .search_bar .search_dropdown ul {
+	 display: none;
+	 position: absolute;
+	 top: 105%;
+	 left: -1px;
+	 font-size: 14px;
+	 width: 225px;
+	 background: #fff;
+	 box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+	 border: 1px solid #ccc;
+	 border-radius: 3px;
+	 padding: 7px 0;
+}
+ .search_bar .search_dropdown li {
+	 list-style-type: none;
+	 margin: 0;
+	 padding: 5px 18px;
+	 color: #1c62a8;
+	 line-height: 1.2em;
+	 position: relative;
+}
+ .search_bar .search_dropdown li:hover {
+	 background: #e7e7e7;
+}
+ .search_bar .search_dropdown li.selected {
+	 background: #1c62a8;
+	 color: #fff;
+}
+ .search_bar.small {
+	 max-width: 300px;
+}
+ .search_bar.small input[type=text] {
+	 font-size: 13px;
+}
+ .search_bar.large {
+	 max-width: 560px;
+}
+ .search_bar.large input[type=text] {
+	 font-size: 16px;
+}
+ .search_bar.larger {
+	 max-width: 700px;
+}
+ .search_bar.larger input[type=text] {
+	 font-size: 18px;
+}
+ .search_bar.huge {
+	 max-width: 860px;
+}
+ .search_bar.huge input[type=text] {
+	 font-size: 21px;
+}
+ .search_bar ::placeholder {
+	 font-weight: 400;
+}
+ 
+
+/* Profile */
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600);
+ * {
+	 box-sizing: border-box;
+}
+ form {
+	 margin: 30px auto 110px;
+}
+ .search_bar {
+	 background: #fff;
+	 border: #b7b7b7 solid 1px;
+	 border-radius: 3px;
+	 box-shadow: 0 0 3px #ccc;
+	 position: relative;
+	 font-family: 'Source Sans Pro', sans-serif;
+	 max-width: 420px;
+}
+ .search_bar input[type=text] {
+	 border: none;
+	 box-shadow: none;
+	 font-weight: 600;
+	 font-size: 14px;
+	 width: 80%;
+	 padding: 0.5em;
+	 margin: 0;
+	 overflow: hidden;
+}
+ .search_bar input[type=text]:focus {
+	 outline: none;
+}
+ .search_bar button[type=submit] {
+	 background: linear-gradient(#237cd4, #1e6ab5);
+	 color: rgba(255, 255, 255, 0);
+	 border: 1px solid #1c62a8;
+	 width: 10%;
+	 min-width: 56px;
+	 position: absolute;
+	 top: -1px;
+	 right: -1px;
+	 bottom: -1px;
+	 border-radius: 0 3px 3px 0;
+	 margin: 0;
+	 user-select: none;
+}
+ .search_bar button[type=submit]:after {
+	 content: '';
+	 position: absolute;
+	 top: 18%;
+	 right: 0;
+	 bottom: 22%;
+	 left: 4%;
+	 background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/search-icon.svg") no-repeat center center;
+	 background-size: contain;
+}
+ .search_bar button[type=submit]:hover, .search_bar button[type=submit]:focus {
+	 background: linear-gradient(#38d, #2174c7);
+	 box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+	 cursor: pointer;
+}
+ .search_bar .search_dropdown {
+	 font-weight: 600;
+	 min-width: 17px;
+	 background: linear-gradient(#f4f4f4, #e2e2e2);
+	 border-right: 1px solid #ddd;
+	 color: #555;
+	 padding: 0 28px 0 13px;
+	 border-radius: 2px 0 0 2px;
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 bottom: 0;
+	 z-index: 10000;
+	 user-select: none;
+	 box-sizing: content-box;
+}
+ .search_bar .search_dropdown:after {
+	 content: "\2193";
+	 color: rgba(85, 85, 85, 0);
+	 background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg") no-repeat top left;
+	 height: 8px;
+	 width: 10px;
+	 position: absolute;
+	 top: 50%;
+	 right: 10px;
+	 margin-top: -6px;
+}
+ .search_bar .search_dropdown:hover, .search_bar .search_dropdown.active {
+	 background: linear-gradient(#e7e7e7, #d5d5d5);
+	 cursor: pointer;
+	 border-right-color: #ccc;
+}
+ .search_bar .search_dropdown > span {
+	 position: absolute;
+	 top: 50%;
+	 margin-top: -8px;
+	 white-space: nowrap;
+	 font-size: 15px;
+}
+ .search_bar .search_dropdown ul {
+	 display: none;
+	 position: absolute;
+	 top: 105%;
+	 left: -1px;
+	 font-size: 14px;
+	 width: 225px;
+	 background: #fff;
+	 box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+	 border: 1px solid #ccc;
+	 border-radius: 3px;
+	 padding: 7px 0;
+}
+ .search_bar .search_dropdown li {
+	 list-style-type: none;
+	 margin: 0;
+	 padding: 5px 18px;
+	 color: #1c62a8;
+	 line-height: 1.2em;
+	 position: relative;
+}
+ .search_bar .search_dropdown li:hover {
+	 background: #e7e7e7;
+}
+ .search_bar .search_dropdown li.selected {
+	 background: #1c62a8;
+	 color: #fff;
+}
+ .search_bar.small {
+	 max-width: 300px;
+}
+ .search_bar.small input[type=text] {
+	 font-size: 13px;
+}
+ .search_bar.large {
+	 max-width: 560px;
+}
+ .search_bar.large input[type=text] {
+	 font-size: 16px;
+}
+ .search_bar.larger {
+	 max-width: 700px;
+}
+ .search_bar.larger input[type=text] {
+	 font-size: 18px;
+}
+ .search_bar.huge {
+	 max-width: 860px;
+}
+ .search_bar.huge input[type=text] {
+	 font-size: 21px;
+}
+ .search_bar ::placeholder {
+	 font-weight: 400;
+}
+ * {
+	 margin: 0;
+	 padding: 0;
+	 box-sizing: border-box;
+	 font-family: "proxima-nova", sans-serif;
+	 font-size: 1em;
+	 font-weight: 300;
+	 color: #141414;
+	 -webkit-transition: 0.2s ease-in-out;
+	 -moz-transition: 0.2s ease-in-out;
+	 -o-transition: 0.2s ease-in-out;
+	 transition: 0.2s ease-in-out;
+	 -webkit-font-smoothing: antialiased;
+	 -moz-osx-font-smoothing: grayscale;
+}
+ body {
+	 background-color: #ededed;
+}
+ #wrapper {
+	 position: absolute;
+	 top: 50%;
+	 margin-top: -22px;
+	 left: 0;
+	 width: 100%;
+}
+ #container {
+	 width: 375px;
+	 height: 670px;
+	 margin: 0 auto;
+	 box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, 0.2);
+	 -webkit-border-radius: 5px;
+	 -moz-border-radius: 5px;
+	 -ms-border-radius: 5px;
+	 border-radius: 5px;
+	 position: relative;
+	 overflow: hidden;
+	 background: -moz-linear-gradient(45deg, rgba(245, 246, 250, 1) 0%, rgba(255, 255, 255, 1) 100%);
+	 background: -webkit-linear-gradient(45deg, rgba(245, 246, 250, 1) 0%, rgba(255, 255, 255, 1) 100%);
+	 background: linear-gradient(45deg, rgba(245, 246, 250, 1) 0%, rgba(255, 255, 255, 1) 100%);
+}
+ #back {
+	 width: 100%;
+	 height: 220px;
+	 background-image: url('http://enwaara.se/codepen/profile-back.jpg');
+	 background-repeat: no-repeat;
+	 background-size: cover;
+	 background-position: center;
+}
+ img {
+     width: 200px;
+     height: 200px;
+	 border-radius: 200px;
+	 border: 4px solid #f5f6fa;
+	 box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.2);
+	 position: absolute;
+	 top: 82px;
+	 left: calc(50% - 100px);
+}
+ #info {
+	 width: 100%;
+	 height: calc(100% - 220px);
+	 padding: 60px;
+	 display: flex;
+	 flex-direction: column;
+	 justify-content: center;
+	 align-items: center;
+	 overflow: hidden;
+}
+ #info h1 {
+	 width: 100%;
+	 text-align: center;
+	 font-weight: 900;
+	 text-transform: uppercase;
+	 letter-spacing: 1.5px;
+	 font-size: 1.4em;
+	 padding-bottom: 12px;
+	 padding-top: 12px;
+	 position: relative;
+}
+ #info h1:after {
+	 content: "";
+	 display: block;
+	 width: 40px;
+	 height: 2px;
+	 opacity: 0.2;
+	 position: absolute;
+	 bottom: 24px;
+	 left: calc(50% - 20px);
+}
+ #about {
+	 width: 100%;
+	 padding-bottom: 0px;
+}
+ #about li {
+	 list-style: none;
+	 width: 100%;
+	 overflow: hidden;
+	 padding-bottom: 24px;
+	 line-height: 20px;
+	 letter-spacing: 0.5px;
+	 font-size: 1.1em;
+}
+ #about li i {
+	 font-size: 1.2em;
+	 width: 20px;
+	 height: 20px;
+	 text-align: center;
+	 margin-right: 12px;
+}
+ #about li:nth-child(2) i {
+}
+ #about li a {
+	 text-decoration: none;
+}
+ #about li a:hover {
+}
+ #social {
+	 width: 100%;
+	 overflow: hidden;
+	 display: flex;
+	 flex-direction: row;
+	 align-items: center;
+}
+ #social li {
+	 list-style: none;
+	 width: 33.33%;
+	 font-size: 1.8em;
+}
+ #social li:nth-child(2) {
+	 text-align: center;
+}
+ #social li:nth-last-child(1) {
+	 text-align: right;
+}
+ #social li:hover i {
+}
+ @media screen and (max-width: 1440px) {
+	 #wrapper {
+		 transform: scale(0.8);
+	}
+}
+.fa-user-circle:before {
+    content: "\f2bd";
+    color: #91beeb;
+}
+.fa-envelope:before {
+    content: "\f2bd";
+    color: #91beeb;
+}
+.fa-bed:before {
+    content: "\f2bd";
+    color: #91beeb;
+}
+.fa-couch:before {
+    content: "\f2bd";
+    color: #91beeb;
+}
+.button {
+    background-color: #1c62a8; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .button2 
+  {
+      background-color: #1c62a8;
+      margin-bottom: 50px;
+
+    
+    } /* Blue */
+    a{
+        color:#003399;
+        text-decoration:none;
+      }
+      .profileWrap{
+        position: relative;
+        padding: 15px;
+        border: 1px solid #ccc;  
+        padding-left: 100px;
+        list-style: none;
+        margin-bottom:20px;
+        padding-top: 3px;
+    }
+      .profImg{
+        background: url("http://up419.siz.co.il/up2/mtnlhhynnhjt.png") no-repeat center center;
+        width: 50px;
+        height: 50px;
+        border:1px solid #ccc;
+        border-radius: 25px;
+        position:absolute;
+        left:30px;
+        top:30px;
+      }
+      .profImg img {   
+        width: 50px;
+        height: 50px;
+        border-radius:50%;
+      }
+      .profileInfo span {
+        display:block;
+        font-size:14px;
+        line-height:18px;
+        color:#000;
+      }
+      .profileInfo .dist {
+       text-align:right;
+       color:#ccc;
+      }
+
+      .test{
+        margin-top: 57px;
+      }
+}
